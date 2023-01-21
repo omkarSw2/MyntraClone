@@ -17,3 +17,6 @@
 .justify-center{
     justify-content: center;
 }
+.boder{
+    border: 1px solid red;
+}

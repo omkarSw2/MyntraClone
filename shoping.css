@@ -1,0 +1,31 @@
+#maindiv{
+    display: grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:40px;
+    margin-top:100px;
+  }
+  #maindiv>div{
+    border: 1px solid red;
+    padding: 20px;
+    text-align: center;
+    
+  }
+  #maindiv>div>img{
+    width :100%;
+  }
+  #maindiv>div:hover{
+    width: 90%;
+    background-color: #f1eded;
+  }
+  
+  #maindiv>div>button{
+  
+  
+   padding: 5px;
+   border:0px;
+  color: white;
+  background-color: rgb(92, 181, 216);
+  }
+  #maindiv>div>button:hover{
+  background-color: rgb(57, 36, 173);
+  }

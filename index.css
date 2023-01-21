@@ -20,6 +20,13 @@ header{
     font-family: 'Roboto', sans-serif;
   
   }
+  .right>div>a{
+    font-weight: bolder;
+    text-decoration: none;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+
+  }
   .right input{
     
     width:300px;
@@ -118,15 +125,22 @@ header{
     margin: 0px;
     padding: 0px;
     margin-top: 70px;
+   
 }
 .img-grid img{
     width: 100%;
     height: 100%;
 
 }
+.img-grid img:hover{
+    cursor: pointer;
+}
 .omg-deal img{
     width: 100%;
     height: 100%;
+}
+.omg-deal img:hover{
+    cursor: pointer;
 }
 .cards-10{
     display: grid;
@@ -138,6 +152,9 @@ header{
     width: 100%;
     height: 100%;
 }
+.cards-10 img:hover{
+    cursor: pointer;
+}
 .cards-9{
     display: grid;
     grid-template-columns: repeat(9, 1fr);
@@ -147,6 +164,9 @@ header{
 .cards-9 img{
     width: 100%;
     height: 100%;
+}
+.cards-9 img:hover{
+    cursor: pointer;
 }
 .grid-8{
     display: grid;
@@ -159,6 +179,9 @@ header{
     width: 100%;
     height: 100%;
 }
+.grid-8 img:hover{
+    cursor: pointer;
+}
 .grid-6{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -167,6 +190,9 @@ header{
 .grid-6 img{
     width: 100%;
     height: 100%;
+}
+.grid-6 img:hover{
+    cursor: pointer;
 }
 .grid-2{
     display: grid;
@@ -177,6 +203,9 @@ header{
 .grid-2 img{
     width: 100%;
     height: 100%;
+}
+.grid-2 img:hover{
+    cursor: pointer;
 }
 /* Footer starts */
 footer{
