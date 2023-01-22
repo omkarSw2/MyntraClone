@@ -19,7 +19,7 @@
     <header class="container shadow">
         <nav class="flex space-between">
             <div class="left flex items-center ">
-                <img src="https://images.indianexpress.com/2021/01/myntra.png" alt="">
+                <img src="https://images.indianexpress.com/2021/01/myntra.png" onclick=window.open("index.html","_self")  alt="">
                 <ul class="flex bold items-center">
                     <li class="lihover"><a href="index.html">MEN</a>
                       <div class="megamenu ">
@@ -560,20 +560,6 @@
   let bag=JSON.parse(localStorage.getItem("bag"))||[];
   let key=JSON.parse(localStorage.getItem("key"))||[];
 
- 
-//   async function getdata(){
-//     const API="https://63cbb6d99b72d2a88e00c587.mockapi.io/api/new";
-//     try {
-//       let  res= await fetch(API);
-//       let data= await res.json();
-//       console.log(data);
-//       displaydata(data);
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   }
-//   getdata()
-
   displaydata(key)
   function displaydata(data){
     menu  .innerHTML=""
@@ -597,7 +583,7 @@
         description.innerText=element.description
 
         let buttons=document.createElement("button");
-        buttons.innerText="Add To Whishlist";
+        buttons.innerText="Add To Bag";
         buttons.addEventListener("click",()=>{
           if(cheackdup(element)){
             alert("Already Present into the whishlist");
@@ -608,14 +594,15 @@
               return ele.id !==element.id;
 
             }) ;
-            localStorage.setItem("key",JSON.stringify(key));
+            
             
 
             alert("Added to Bag");
+            localStorage.setItem("key",JSON.stringify(key));
 
           }
           displaydata(key);
-          window.location.href = "bag.html";
+          // window.location.href = "bag.html";
         });
        
        

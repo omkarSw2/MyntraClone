@@ -1,8 +1,9 @@
+
 #maindiv{
     display: grid;
     grid-template-columns:repeat(4,1fr);
     gap:40px;
-    margin-top:100px;
+    /* margin-top:100px; */
   }
   #maindiv>div{
     border: 1px solid gray;
@@ -34,4 +35,7 @@
   color: white;
   padding:10px;
   border-radius: 4px;
+  }
+  #value{
+    margin-top: 120px 
   }
