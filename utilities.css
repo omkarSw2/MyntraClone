@@ -1,0 +1,26 @@
+.flex{
+    display: flex;
+}
+.bold{
+    font-weight: bolder;
+}
+.space-between{
+    justify-content: space-between;
+}
+.mx-2{
+    margin-left:12px;
+    margin-right:12px;
+}
+.items-center{
+    align-items: center;
+}
+.justify-center{
+    justify-content: center;
+}
+.boder{
+    border: 1px solid red;
+}
+.mh-2{
+    margin-top:12px;
+    margin-bottom: 12px;
+}

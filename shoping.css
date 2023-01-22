@@ -1,0 +1,37 @@
+#maindiv{
+    display: grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:40px;
+    margin-top:100px;
+  }
+  #maindiv>div{
+    border: 1px solid gray;
+    border-radius: 5px;
+  
+    padding: 20px;
+    text-align: center;
+    
+  }
+  #maindiv>div>img{
+    width :100%;
+  }
+  #maindiv>div:hover{
+    width: 90%;
+    background-color: #f3f1f1;
+  }
+  
+  #maindiv>div>button{
+  
+  
+   padding: 5px;
+   border:0px;
+  color: rgb(211, 66, 66);
+  background-color: transparent;
+  font-weight: 600;
+  }
+  #maindiv>div>button:hover{
+  background-color: rgb(211, 66, 66);
+  color: white;
+  padding:10px;
+  border-radius: 4px;
+  }

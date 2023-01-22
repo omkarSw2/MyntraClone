@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css  ">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="utilities.css">
+    <link rel="icon" type="image/png"
+    href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAKSElEQVR42u1ZeVRU5xUviolNoh6RRRZxw7iTtLhhbWNd0kStptG4YDEpiXWJG4laqcbdiFalxgU1Vot41CSiEgQVNARRCCqgIqjsKiCCgMMww+y/3vsOY8MZmPcGNfrH+51zz3AO8+537+/+7v2+782vZMiQIUOGDBkyZMiQIUPGE0Kn0/U3mUzHABSTHSXzelKfAFobjcaNdT4zyIa/iLnbUfKzABiqkq7jctAMPMq8BEIl2cim+qysrPQkQrOMahUuzVyH/N3RIJiIkMUvVPIqlSqAA7ux4r9Y6+yM1Y6O2ODujJwDm0HQkv3BVp+lpaXOlGiBMicTu7p0Yp+CxQyfCQb9b8kLkXxFRcVgAJqMVWFY4+iMqCG9kL+gO86M7oT1rs64c3wvCBU2tINdfHx8S1JUsqa0CDu6umG3RxdkuK5BQvtPEezoYSbBZDAYxj/X5G/fvu1IlSgpjb6MDU6euOQaBOPaIcBWb8Fuznodmzu6CO1AUk4F0EKC32ZqtToEBgMO9u+Ob3q3g6LfHNR4fC9YoXsoNjl1xpX520BQkvV8XgQ0p0C/01cqsc2tL1JcFwsBmoJ9OfnHljG9G/YP8IJJp2HZrhcj9cGDByNZ4ednTkR4D0coPmgLpU8g+35sBe47BRJKTwrEXgFg/zykPwmEk0OnI7r91MfBGdcJCqhncWM64vy8CSDoyfo05vPMmTOvkqzvlMadQGhnJ1S83xbVTEC/Bey7nqW7rsBuzwEwafVM7LJfNPm4uLg2LP2CPTHY4zwASo8T/ydg+QgLAkz/9kZYPw88vHyWK3YBgF1D0q+url7P0t/fxxMFoxw4ecGUg6ZbEEBGxPvhxwlB5kH7+i9FAAe6hZnf02Eg7rrvqReUYeE4TtrCKpb3wqG3eoJBVQ5oYJ70IHI0lxYGIMG3LnkzAb+f1CABCo8I7HLxQWXSTSY2mv088+rn5OT0YsaT/vYlTeU5FkHp/v4hJ9ygpfh1QVbochDKyVr/fJ7U1taeVt/Nw6HeLpx0fQKGD2ffDVqu+1Yc8X7PTOyoZz74aM8/ri54gH1uQ8zSr2faiYGNEgBqhYhh3WBQKbhvV5pJLSoqGg5C7IQ/onCMgyUBo73Zd6MW6fIB8nadZBVkAmj2zKqfl5fXH4DpzDvzkO22ucFgaodu4GQbtftBPXF5eQAICjIH8mtP1b9YdSURZwc4csKWNsEJNZ4nGiXgocdhHOz2J7MKpj6z6rNMq2/cwTH3vzQajKp3GCdq1RKn9IJRXQ29Xr/h3r17o0CInzwMleM54YZN9WaYVRUkuX6GrPWHWQU5AJo/9epnZ2cPBOHU8Fkocv/aajCmrwZbJUAd3Ac3ty0GoYZOfNeVWem4OsKZErVCwLDNVtfkdjziNcasAv+nXn2lUvmdOu8+Ytz9eUHrBGyfLKqC3MUDYdJrwchcOJmTtE7A+4tE173iuhS5O75nFVx7mjuCXWpqqhcAfcKEpSj1OCAaiHHnF6IEGEO8UXIsBLX38lH4XntxAj6azL5FLdb3UxC4vd5+atWvqqraqq9S4VSnjyQFYYyN5iRFrWLTCJSEzOcERa12ywyousWIq8B9KSqTb7MKYp6GCuxWrlz5Cm1Z5emLdpsPPVZN1T0GUCuBbb8VJyGkL8r9PCURoP/hIDRTf+I1RGdB8oQ1IBhpaHd84lMf7dHTQEjo/7mk6mumpUDAt/6iBOiXeXFyksxUfg+60FxJMaR0/Sf4kkaFW/2kBNjTje+Hstg0uo+vlbS4fm8+BCTvECVA/XF7ScnXzOsHhjFTISkGPhekLdjJbVAEwK7J8o+MjHQDoLvkt4EcR0pa3FSkhoDyW1aTN/2rF5QSq68JXwEz1L5nJcWRPGgZGFRA3ybLv7i4eA4IaW+slrRo7ejzYNDQjAMjbHSjBOgWd5Ysf2NOKugIfg2ASbc2S1Ist902QXG9UDhsNVn+NTU1Z/mlQ7H7fyQtqtuZy31XERQU5AvAgAshVuTvIk3+s/qCkZ6ePp/iuWxMr+K1JNmNz/ZxG9xqym5gFxAQ0IoeVmUHHpK0mKpDFEx31VAoFAfoeWe6Miej7GbDBGzqY4v8OYnawMBA98zMzJWCrAdLa4Obb28HQ6vV9rBZ/levXhVuF4WjD0qT/5RkMOjIPIKef5UOT4vAODzJcvov7yZ9+hfngE6hR8nnyzNmzHiDyNDqtuVIiqmgSygMNbWg4/Z8mw8/JSUl6wwqDUq7SiPAcLKEmb5Nz7bg9hk6dKgXtUM1rn9jQYBmfgdJyau/eBeMwsLCd9knWbuHDx9GmR5ooOp0UkJckSg9+hPfDcJsbQN7GmTHlUn5kpJX+8QCehPKysqCWD111pZIDIdODewa0qTtT58cydXL9fHxaVGXQMvo6Gg/EDQzrkjbErck8Vyy+W7wEp2iMtQR0qSm35PHizwKCwtrxwvV2csbN258C4ARF7fWI6BmSjvx4TfnNyCnIBID6whlsApcaUe4Ycx4JCm2ys8TQNDS/HjJFgL47WyZaluG+PDzPgOoDSgvLw/h1vl5G5E509vjU1BXAKGDIBCwpa/koy/FUB4cHNzGXL26z9eSk5PnCSrwTxGNT/HXeDAePXrU2RYC+AdJhWZLpnj19xeAvxsREeFRX2bC37/evn37SAAGpISadwDxm1+gr1B9Oof8QyCyvk97BweHDqTQW8YsBVQdo6wXaFIiCNyeNv1Q24YlTfu69cn/TgILnANdIcjTEoIK6He+IzBogLAxpADrBCgnOsCQeZEHasHs2bNfs+xdoR1anTp16kNB28tvWIuRVWImoJtNCmCGDdEljTrmq6npZjU0Gk3W3LlzWzcyZITB5efn9ya3FIrT+JZodQZo9i8BwXTt2rWxTGAjPplsN2qvaNQYoB4a32ic2i8yBH+5ubnONs0AGj5hUOih8oq2TN4zCoYTxeD3+OfOnRtsEahlxdrGxsZ+AsDI26JmjkfD296qcYBBz9X6mgexmdRGSHiFiaWj7n1TrhKqPqcb3p4TylhNaUKMNqBFeHj4aO5dmvAW931DVAkIBqrSx/xdkS3Gru47brdu3doolOPCbtT4OdZ/4bGZFK2t5UNPwsCBA1ubJ78YsXv37v0znzdM2Uqof3euvvw/uQwGKWWVuD/L3nXJz8//CgTjhXJo12SCZ4KpTMOVr0lLS5vJ8pa4vwrbIlkH2o6+BJ8aijOgPbCEJB8Ew/UfwaisrIwZO3asC68vwa+5FZyoWONZCdAaoT9yF9rVmdBH3GO98SXqkuUskR6wZ2Ji4jyaB9kAdNzHhG937NgxhCe8jU7t6gjz2Ldv3ziqymkmksmgS05qSkrKXK6opOQt1eXk7+/f786dO7tI7pQ5tDSbculXrOBp06a5i8hflASuSGcyL7KOZO1E+lNKwA5MLvts2bJlF/pszz1tkbx0n/xcKzJOlv11ZaJ5mIv4lOzc3nzG514SdSjus5nZZ501f0o+m7M/i1hlyJAhQ4YMGTJkyJAhQ0Z9/A/MGjKdMt/y6AAAAABJRU5ErkJggg=="
+    sizes="64x64"/>
+    
+   
+
+    <title>Online Shopping for Women, Men, Kids Fashion & Lifestyle - Myntra</title>
+  </head>
+  <body>
+    <header class="container shadow">
+        <nav class="flex space-between">
+            <div class="left flex items-center ">
+                <img src="https://images.indianexpress.com/2021/01/myntra.png" onclick=window.open("shoping.html","_self")  alt="">
+                <ul class="flex bold items-center">
+                    <li class="lihover"><a href="shoping.html">MEN</a>
+                      <div class="megamenu ">
+                       <div>
+                        <h3><a href="#">Topware</a></h3>
+                        <p><a href="#">T-Shirts</a></p>
+                        <p><a href="#">Casual Shirts</a></p>
+                        <p><a href="#">Formal Shirts</a></p>
+                        <p><a href="#">Sweat Shirts</a></p>
+                        <p><a href="#">Sweters</a></p>
+                        <p><a href="#">Jackets</a></p>
+                        <p><a href="#">Blazers & Coats</a></p>
+                        <p><a href="#">Suits</a></p>
+                        <p><a href="#">Rain Jackets</a></p>
+                        <hr>
+                        <h3><a href="#">Indian & Festival Ware</a></h3>
+                        <p><a href="#">Kurta & Kurtas Set</a></p>
+                        <p><a href="#">Shervanis</a></p>
+                        <p><a href="#">Nehru Jackets</a></p>
+                        <p><a href="#">Dhotis</a></p>
+                       </div>
+                       <div>
+                        <h3><a href="#">Bottomware</a></h3>
+                        <p><a href="#">Jeans</a></p>
+                        <p><a href="#">Casual Trousers</a></p>
+                        <p><a href="#">Formal Trousers</a></p>
+                        <p><a href="#">Track Pants & Joggers</a></p>
+                        <hr>
+                        <h3><a href="#">Innerware & SleepWares</a></h3>
+                        <p><a href="#">Brifers & Trunks</a></p>
+                        <p><a href="#">Boxers</a></p>
+                        <p><a href="#">vests Jackets</a></p>
+                        <p><a href="#">Sleepware & Loungware</a></p>
+                        <p><a href="#">Thermals</a></p>
+                        <hr>
+                        <h3><a href="#">Pluse Size</a></h3>
+                       </div>
+                       <div>
+                        <h3><a href="#">Footware</a></h3>
+                        <p><a href="#">Casual Shose</a></p>
+                        <p><a href="#">Sports Shose</a></p>
+                        <p><a href="#">Formal Shose</a></p>
+                        <p><a href="#">Sneakers</a></p>
+                        <p><a href="#">Sandals & Floters</a></p>
+                        <p><a href="#">Flip Flops</a></p>
+                        <p><a href="#">Socks</a></p>
+                        <hr>
+                        <h3><a href="#">Personal Care & Grooming</a></h3>
+                        <h3><a href="#">Sunglasses & Frames</a></h3>
+                        <h3><a href="#">Watches</a></h3>
+                        </div>
+                        <div>
+                          <h3><a href="#">Soprts & Active Wears</a></h3>
+                          <p><a href="#">Sports shoes</a></p>
+                          <p><a href="#">Sports Sandals</a></p>
+                          <p><a href="#">Active T-Shirts</a></p>
+                          <p><a href="#">Track Pants & Shorts</a></p>
+                          <p><a href="#">Tracksuits</a></p>
+                          <p><a href="#">Jakets & Sweatshirts</a></p>
+                          <p><a href="#">Soprts Accessories</a></p>
+                          <p><a href="#">Swimwares</a></p>
+                          <hr>
+                            <h3><a href="#">Gadgets</a></h3>
+                            <p><a href="#">Smart Warebles</a></p>
+                            <p><a href="#">Fitness Gadgets</a></p>
+                            <p><a href="#">Headphones</a></p>
+                            <p><a href="#">Speakers</a></p>
+                          </div>
+                          <div>
+                            <h3><a href="#">Fasion Accessories</a></h3>
+                            <p><a href="#">Wallets</a></p>
+                            <p><a href="#">Belts</a></p>
+                            <p><a href="#">Perfumes & Body Mists</a></p>
+                            <p><a href="#">Trimmers</a></p>
+                            <p><a href="#">Deodrants</a></p>
+                            <p><a href="#">Ties,Cufflinks & Pocket Squares</a></p>
+                            <p><a href="#">Accessories Gift Sets</a></p>
+                            <p><a href="#">Caps & Hats</a></p>
+                            <p><a href="#">Mufflers,Scarves & Gloves</a></p>
+                            <p><a href="#">Phone Cases</a></p>
+                            <p><a href="#">Rings & Wristware</a></p>
+                            <p><a href="#">Helmets</a></p>
+                            <hr>
+                            <h3><a href="#">Bags & Backpacks</a></h3>
+                            <h3><a href="#">Luggeges & Trolleys</a></h3>
+
+                          </div>
+
+
+                      </div>
+
+                    </li>
+                    <li class="lihover"><a href="shoping.html">WOMEN</a>
+                      <div class="megamenu ">
+                        <div>
+                         <h3><a href="#">Indian & Festival Ware</a></h3>
+                         <p><a href="#">Kurta & Suits</a></p>
+                         <p><a href="#">Kurties,Tunics & Tops</a></p>
+                         <p><a href="#">Sarees</a></p>
+                         <p><a href="#">Ethic Ware</a></p>
+                         <p><a href="#">Leggings,Salwars& Churidars</a></p>
+                         <p><a href="#">Skirts & Plazzos</a></p>
+                         <p><a href="#">Dress Materials</a></p>
+                         <p><a href="#">Lehenga Cholis</a></p>
+                         <p><a href="#">Dupattas & Shawls</a></p>
+                         <p><a href="#">Jackets</a></p>
+                         <hr>
+                         <h3><a href="#">Belts,Scarves & More</a></h3>
+                         <h3><a href="#">Watches & Wearables</a></h3>
+                        </div>
+                        <div>
+                         <h3><a href="#">Western Wear</a></h3>
+                         <p><a href="#">Dresses</a></p>
+                         <p><a href="#">Tops</a></p>
+                         <p><a href="#">T-Shirts</a></p>
+                         <p><a href="#">Jeans</a></p>
+                         <p><a href="#">Trousers & Capris</a></p>
+                         <p><a href="#">Shorts & Skirts</a></p>
+                         <p><a href="#">Playsuits</a></p>
+                         <p><a href="#">Jumpsuits</a></p>
+                         <p><a href="#">Shrugs</a></p>
+                         <p><a href="#">Sweaters $ Sweatshrits</a></p>
+                         <p><a href="#">Jackets & Coats</a></p>
+                         <p><a href="#">Blazers & Waistcotas</a></p>
+                         <hr>
+                         <h3><a href="#">Pluse Size</a></h3>
+                        </div>
+                        <div>
+                         <h3><a href="#">Maternity</a></h3>
+                         <h3><a href="#">Sunglasses & Frames</a></h3>
+                         <h3><a href="#">Footwear</a></h3>
+                         <p><a href="#">Flats</a></p>
+                         <p><a href="#">Casual Shose</a></p>
+                         <p><a href="#">Heels</a></p>
+                         <p><a href="#">Boots</a></p>
+                         <p><a href="#">Sports shoes & Floaters</a></p>
+                         <hr>
+                         <h3><a href="#">Soprts & Active Wears</a></h3>
+                         <p><a href="#">Clothing</a></p>
+                         <p><a href="#">Footwear</a></p> 
+                         <p><a href="#">Sports Accsesories</a></p> 
+                         <p><a href="#">Sports Equipment</a></p> 
+                         </div>
+                         <div>
+                           <h3><a href="#">Lingerie</a></h3>
+                           <p><a href="#">Bra</a></p>
+                           <p><a href="#">Briefs</a></p>
+                           <p><a href="#">Shapewear</a></p>
+                           <p><a href="#">Sleepwear & Loungewear</a></p>
+                           <p><a href="#">Swimwear</a></p>
+                           <p><a href="#">Camisole & Thermals</a></p>
+                          
+                           <hr>
+                             <h3><a href="#">Beauty & Persolancare</a></h3>
+                             <p><a href="#">Makeup</a></p>
+                             <p><a href="#">Skincare</a></p>
+                             <p><a href="#">Primium Beauty</a></p>
+                             <p><a href="#">Lipsticks</a></p>
+                             <p><a href="#">Fragrances</a></p>
+                           </div>
+                           <div>
+                            <h3><a href="#">Gadgets</a></h3>
+                            <p><a href="#">Smart Wearables</a></p>
+                            <p><a href="#">Fitness Gadgets</a></p>
+                            <p><a href="#">Headphones</a></p>
+                            <p><a href="#">Speakers</a></p>
+                            <hr>
+                            <h3><a href="#">Jewellery</a></h3>
+                            <p><a href="#">Fashion Jewellery</a></p>
+                            <p><a href="#">Fine Jewellery</a></p>
+                            <p><a href="#">Earrings</a></p>
+                            <p><a href="#">Backpacks</a></p>
+                            <p><a href="#">Handbags, Bags & Wallets</a></p>
+                            <p><a href="#">Luggages & Trolleys</a></p>
+                            </div>
+                      </div>
+                    </li>
+                    <li class="lihover"><a href="shoping.html">KIDS</a>
+                 
+                   <div class="megamenu ">
+                    <div>
+                     <h3><a href="#">Boys Clothing</a></h3>
+                     <p><a href="#">T-Shirts</a></p>
+                     <p><a href="#">Shirts</a></p>
+                     <p><a href="#">Jeans</a></p>
+                     <p><a href="#">Trousers</a></p>
+                     <p><a href="#">Clothing Sets</a></p>
+                     <p><a href="#">Ethnic Wear</a></p>
+                     <p><a href="#">Track Pants & Pyjamas</a></p>
+                     <p><a href="#">Jacket, Sweater & Sweatshirts</a></p>
+                     <p><a href="#">Party Wear</a></p>
+                     <p><a href="#">Innerwear & Thermals</a></p>
+                     <p><a href="#">Nightwear & Loungewear</a></p>
+                     <p><a href="#">Value Packs</a></p>
+                     </div>
+                     <div>
+                      <h3><a href="#">Girls Clothing</a></h3>
+                     <p><a href="#">Dresses</a></p>
+                     <p><a href="#">Tops</a></p>
+                     <p><a href="#">Tshirts</a></p>
+                     <p><a href="#">Clothing Sets</a></p>
+                     <p><a href="#">Lehenga choli</a></p>
+                     <p><a href="#">Kurta Sets</a></p>
+                     <p><a href="#">Party wear</a></p>
+                     <p><a href="#">Dungarees & Jumpsuits</a></p>
+                     <p><a href="#">Skirts & shorts</a></p>
+                     <p><a href="#">Tights & Leggings</a></p>
+                     <p><a href="#">Jeans, Trousers & Capris</a></p>
+                     <p><a href="#">Jacket, Sweater & Sweatshirts</a></p>
+                     <p><a href="#">Innerwear & Thermals</a></p>
+                     <p><a href="#">Nightwear & Loungewear</a></p>
+                     <p><a href="#">Value Packs</a></p>
+                     </div>
+                     <div>
+                      <h3><a href="#">Footwear</a></h3>
+                     <p><a href="#">Casual Shoes</a></p>
+                     <p><a href="#">Flipflops</a></p>
+                     <p><a href="#">Sports Shoes</a></p>
+                     <p><a href="#">Flats</a></p>
+                     <p><a href="#">Sandals</a></p>
+                     <p><a href="#">Heels</a></p>
+                     <p><a href="#">School Shoes</a></p>
+                     <p><a href="#">Socks</a></p>
+                     <hr>
+                     <h3><a href="#">Toys</a></h3>
+                     <p><a href="#">Learning & Development</a></p>
+                     <p><a href="#">Activity Toys</a></p>
+                     <p><a href="#">Soft Toys</a></p>
+                     <p><a href="#">Action Figure / Play set</a></p>
+                    </div>
+                    <div>
+                      <h3><a href="#">Infants</a></h3>
+                      <p><a href="#">Bodysuits</a></p>
+                      <p><a href="#">Rompers & Sleepsuits</a></p>
+                      <p><a href="#">Clothing Sets</a></p>
+                      <p><a href="#">Tshirts & Tops</a></p>
+                      <p><a href="#">Dresses</a></p>
+                      <p><a href="#">Bottom wear</a></p>
+                      <p><a href="#">Winter Wear</a></p>
+                      <p><a href="#">Innerwear & Sleepwear</a></p>
+                      <p><a href="#">Infant Care</a></p>
+                      <h3><a href="#">Home & Bath</a></h3>
+                      <h3><a href="#">Personal Care</a></h3>
+                     </div>
+                     <div>
+                      <h3><a href="#">Kids Accessories</a></h3>
+                      <p><a href="#">Bags & Backpacks</a></p>
+                      <p><a href="#">Watches</a></p>
+                      <p><a href="#">Jewellery & Hair accessory</a></p>
+                      <p><a href="#">Sunglasses</a></p>
+                      <p><a href="#">Masks & Protective Gears</a></p>
+                      <p><a href="#">Caps & Hats</a></p>
+                      <h3><a href="#">Brands</a></h3>
+                      <p><a href="#">H&M</a></p>
+                      <p><a href="#">Max Kids</a></p>
+                      <p><a href="#">Pantaloons</a></p>
+                      <p><a href="#">United Colors Of Benetton Kids</a></p>
+                      <p><a href="#">YK</a></p>
+                      <p><a href="#">U.S. Polo Assn. Kids</a></p>
+                      <p><a href="#">Mothercare</a></p>
+                      <p><a href="#">HRX</a></p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="lihover"><a href="shoping.html">HOME & LIVING</a>
+                 
+                    <div class="megamenu ">
+                     <div>
+                      <h3><a href="#">Bed Linen & Furnishing</a></h3>
+                      <p><a href="#">Bed Runners</a></p>
+                      <p><a href="#">Mattress Protectors</a></p>
+                      <p><a href="#">Bedsheets</a></p>
+                      <p><a href="#">Bedding Sets</a></p>
+                      <p><a href="#">Blankets, Quilts & Dohars</a></p>
+                      <p><a href="#">Pillows & Pillow Covers</a></p>
+                      <p><a href="#">Bed Covers</a></p>
+                      <p><a href="#">Diwan Sets</a></p>
+                      <p><a href="#">Chair Pads & Covers</a></p>
+                      <p><a href="#">Sofa Covers</a></p>
+                      <h3><a href="#">Flooring</a></h3>
+                      <p><a href="#">Floor Runners</a></p>
+                      <p><a href="#">Carpets</a></p>
+                      <p><a href="#">Floor Mats & Dhurries</a></p>
+                      <p><a href="#">Door Mats</a></p>
+                      </div>
+                      <div>
+                        <h3><a href="#">Bath</a></h3>
+                        <p><a href="#">Bath Towels</a></p>
+                        <p><a href="#">Hand & Face Towels</a></p>
+                        <p><a href="#">Beach Towels</a></p>
+                        <p><a href="#">Towels Set</a></p>
+                        <p><a href="#">Bath Rugs</a></p>
+                        <p><a href="#">Bath Robes</a></p>
+                        <p><a href="#">Bathroom Accessories</a></p>
+                        <p><a href="#">Shower Curtains</a></p>
+                        <h3><a href="#">Lamps & Lighting</a></h3>
+                        <p><a href="#">Floor Lamps</a></p>
+                        <p><a href="#">Ceiling Lamps</a></p>
+                        <p><a href="#">Table Lamps</a></p>
+                        <p><a href="#">Wall Lamps</a></p>
+                        <p><a href="#">Outdoor Lamps</a></p>
+                        <p><a href="#">String Lights</a></p>
+                       </div>
+                       <div>
+                        <h3><a href="#"> Home Décor</a></h3>
+                        <p><a href="#">Plants & Planters</a></p>
+                        <p><a href="#">Aromas & Candles</a></p>
+                        <p><a href="#">Clocks</a></p>
+                        <p><a href="#">Mirrors</a></p>
+                        <p><a href="#">Wall Décor</a></p>
+                        <p><a href="#">Festive Decor</a></p>
+                        <p><a href="#">Pooja Essentials</a></p>
+                        <p><a href="#">Wall Shelves</a></p>
+                        <p><a href="#">Fountains</a></p>
+                        <p><a href="#">Showpieces & Vases</a></p>
+                        <p><a href="#">Ottoman</a></p>
+                        <h3><a href="#">Cushions & Cushion Covers</a></h3>
+                        <h3><a href="#">Curtains</a></h3>
+                        </div>
+                        <div>
+                          <h3><a href="#"> Home Gift Sets</a></h3>
+                          <h3><a href="#"> Kitchen & Table</a></h3>
+                          <p><a href="#">Table Runners</a></p>
+                          <p><a href="#">Dinnerware & Serveware</a></p>
+                          <p><a href="#">Cups and Mugs</a></p>
+                          <p><a href="#">Bakeware & Cookware</a></p>
+                          <p><a href="#">Kitchen Storage & Tools</a></p>
+                          <p><a href="#">Bar & Drinkware</a></p>
+                          <p><a href="#">Table Covers & Furnishings</a></p>
+                          <h3><a href="#">Storage</a></h3>
+                          <p><a href="#">Bins</a></p>
+                          <p><a href="#">Hangers</a></p>
+                          <p><a href="#">Organisers</a></p>
+                          <p><a href="#">Hooks & Holders</a></p>
+                          <p><a href="#">Laundry Bags</a></p>
+                         </div>
+                      </div>
+
+                     </li>
+                     <li class="lihover"><a href="#">BEAUTY</a>
+                 
+                      <div class="megamenu ">
+                       <div>
+                        <h3><a href="#">Makeup</a></h3>
+                        <p><a href="#">Lipstick</a></p>
+                        <p><a href="#">Lip Gloss</a></p>
+                        <p><a href="#">Lip Liner</a></p>
+                        <p><a href="#">Mascara</a></p>
+                        <p><a href="#">Eyeliner</a></p>
+                        <p><a href="#">Kajal</a></p>
+                        <p><a href="#">Eyeshadow</a></p>
+                        <p><a href="#">Foundation</a></p>
+                        <p><a href="#">Primer</a></p>
+                        <p><a href="#">Concealer</a></p>
+                        <p><a href="#">Compact</a></p>
+                        <p><a href="#">Nail Polish</a></p>
+                        </div>
+                        <div>
+                          <h3><a href="#">Skincare, Bath & Body</a></h3>
+                          <p><a href="#">Face Moisturiser</a></p>
+                          <p><a href="#">Cleanser</a></p>
+                          <p><a href="#">Masks & Peel</a></p>
+                          <p><a href="#">Sunscreen</a></p>
+                          <p><a href="#">Serum</a></p>
+                          <p><a href="#">Face Wash</a></p>
+                          <p><a href="#">Eye Cream</a></p>
+                          <p><a href="#">Lip Balm</a></p>
+                          <p><a href="#">Body Lotion</a></p>
+                          <p><a href="#">Body Wash</a></p>
+                          <p><a href="#">Body Scrub</a></p>
+                          <p><a href="#">Hand Cream</a></p>
+                          <h3><a href="#">Baby Care</a></h3>
+                          <h3><a href="#">Masks</a></h3>
+                         </div>
+                         <div>
+                          <h3><a href="#"> Haircare</a></h3>
+                          <p><a href="#">Shampoo</a></p>
+                          <p><a href="#">Conditioner</a></p>
+                          <p><a href="#">Hair Cream</a></p>
+                          <p><a href="#">Hair Oil</a></p>
+                          <p><a href="#">Hair Gel</a></p>
+                          <p><a href="#">Hair Color</a></p>
+                          <p><a href="#">Hair Serum</a></p>
+                          <p><a href="#">Hair Accessory</a></p>
+                          <h3><a href="#">Fragrances</a></h3>
+                          <p><a href="#">Perfume</a></p>
+                          <p><a href="#">Deodorant</a></p>
+                          <p><a href="#">Body Mist</a></p>
+                         </div>
+                         <div>
+                          <h3><a href="#">Appliances</a></h3>
+                          <p><a href="#">Hair Straightener</a></p>
+                          <p><a href="#">Hair Dryer</a></p>
+                          <p><a href="#">Epilator</a></p>
+                          <h3><a href="#">Men's Grooming</a></h3>
+                          <p><a href="#">Trimmers</a></p>
+                          <p><a href="#">Beard Oil</a></p>
+                          <p><a href="#">Hair Wax</a></p>
+                          <h3><a href="#">Beauty Gift & Makeup Set</a></h3>
+                          <p><a href="#">Beauty Gift</a></p>
+                          <p><a href="#">Makeup Kit</a></p>
+                          <h3><a href="#">Premium Beauty</a></h3>
+                          <h3><a href="#">Wellness & Hygiene</a></h3>
+                          </div>
+                          <div>
+                            <h3><a href="#">Top Brands</a></h3>
+                            <p><a href="#">Lakme</a></p>
+                            <p><a href="#">Maybelline</a></p>
+                            <p><a href="#">LOreal</a></p>
+                            <p><a href="#">Philips</a></p>
+                            <p><a href="#">Bath & Body Works</a></p>
+                            <p><a href="#">THE BODY SHOP</a></p>
+                            <p><a href="#">Biotique</a></p>
+                            <p><a href="#">Mamaearth</a></p>
+                            <p><a href="#">MCaffeine</a></p>
+                            <p><a href="#">Nivea</a></p>
+                            <p><a href="#">Lotus Herbals</a></p>
+                            <p><a href="#">LOreal Professionnel</a></p>
+                            <p><a href="#">KAMA AYURVEDA</a></p>
+                            <p><a href="#">M.A.C</a></p>
+                            <p><a href="#">Forest Essentials</a></p>
+                            </div>
+                        </div>
+
+                       </li>
+                    <li>STUDIO<sup class="sup">NEW</sup></li>
+                </ul>
+            </div>
+            <div class="right flex items-center">
+            
+                <span><i class="fa fa-search" aria-hidden="true"></i></span>&nbsp;
+                <input type="text" placeholder="Search for Products Brands and More">
+             
+                <div class="profile mx-2 flex"><span><i class="fa fa-user-o" aria-hidden="true"></i></span><a href="login.html">profile</a></div>
+                <div class="wihlist mx-2"> <span><i class="fa fa-user-o" aria-hidden="true"></i></span> <a href="whishlist.html">whishlist</a></div>
+                <div class="bag mx-2"><span><i class="fa fa-user-o" aria-hidden="true"></i></span> <a href="bag.html">bag</a></div>
+            </div>
+        </nav>
+    </header>
+   <!-- BANNER SECTION -->
+   <!-- <section> -->
+    <div class="img-grid">
+        <div><img src="https://assets.myntassets.com/f_webp,w_245,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/11/29fb0d4a-d2aa-4c80-93e9-9b3d7c5e43fb1673415936320-Main-Banner_DK_02.jpg"onclick=window.open("shoping.html","_self") alt=""></div>
+        <div> <img src="https://assets.myntassets.com/f_webp,w_245,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/11/ab21eb7a-bcc7-440c-a156-282ca2b4e4ea1673415936331-Main-Banner_DK_03.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div> <img src="https://assets.myntassets.com/f_webp,w_245,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/11/34e71742-c7f2-4ae3-86b0-a7b0999b8c0e1673415936339-Main-Banner_DK_04.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div> <img src="https://assets.myntassets.com/f_webp,w_245,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/11/ee9682c4-0a5c-44ad-9a99-7e477158735d1673415936353-Main-Banner_DK_05.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div> <img src="https://assets.myntassets.com/f_webp,w_245,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/11/f60949cb-7304-4e4b-8268-3d9f2cfc04c51673415936362-Main-Banner_DK_06.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div> <img src="https://assets.myntassets.com/f_webp,w_245,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/11/4a10bb37-4298-4a2a-b105-1051b6ee019f1673415936371-Main-Banner_DK_07.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div> <img src="https://assets.myntassets.com/f_webp,w_245,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/11/ec5d6060-41f2-4de7-99bf-8007778cb1991673415936381-Main-Banner_DK_08.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div> <img src="https://assets.myntassets.com/f_webp,w_245,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/11/9414d876-2f00-4268-9382-0fcd968c7f021673415936389-Main-Banner_DK_09.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div> <img src="https://assets.myntassets.com/f_webp,w_245,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/11/83b69802-d48f-4c7c-9c91-477daa4afd251673415936399-Main-Banner_DK_10.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div> <img src="https://assets.myntassets.com/f_webp,w_245,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/11/73093512-cfec-4a54-9aaa-686fec8962441673415936410-Main-Banner_DK_11.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div> <img src="https://assets.myntassets.com/f_webp,w_245,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/11/2a9468a4-799d-43ec-88bd-6adc1bb510d51673415936419-Main-Banner_DK_12.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div> <img src="https://assets.myntassets.com/f_webp,w_245,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/11/0cd28b62-bca8-4517-9f16-bd9b81d88d671673415936429-Main-Banner_DK_13.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    </div>
+    <!-- OMG DEAL SECTION -->
+    <div class="omg-deal"><img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/12/3d8b5917-e115-425b-8c93-2c2e427f9d4f1673517461716-OMG-Deal--2-.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+
+    <!-- CARDS SECTION -->
+    <div class="cards-10">
+    <div> <img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/12/6a845d9e-6155-4fc7-b670-9059773981931673520272538-image_jpeg_1470430614--1-.jpg" onclick=window.open("shoping.html","_self") alt=""> </div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/12/73be32ba-7db4-46a8-8cbd-ee11c356de701673520291749-image_jpeg_360595955.jpg"  onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/12/86e42d0c-690e-41c5-bf54-b200040f918d1673520309940-image_jpeg639032734.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/12/c5b1f986-923f-40f0-9f2f-7e53491d7a5b1673520333426-image_jpeg_1311032979.jpg"  onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/12/96dc9e41-9475-4cc2-9574-4e82951bfbf21673520353614-image_jpeg_2126156007.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/76b4b856-6475-4fa7-ae97-d8de576ef0d51672984200345-Top_casual_Styles-_Levi-s-_Tommy_Min_40.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/6edf9f37-af8d-46fc-b97a-03c5a3e6d1611672984200495-USPA-_FM_Min_60.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/623fea7c-e7c6-4b9f-921e-b56abb96f39c1672984199664-JJ-_Highlander_Min_65.jpg"  onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/46ca5fb8-cfe2-4db3-b1fb-77e41ef5d0d21672984199501-Gant-_Nautica_Min_50.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/bd2c7bfc-3673-4d21-ae0d-f9611d9c4bc91672984199677-JJ-_M-H_winter_specials_starting_699.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/10/c5486d89-4979-438f-804d-f13b5929b4811673354407308-Best-of-Western-Wear-from-Vero-Moda--M-S---more--50-80-.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/8cdaec53-01e9-4e04-97d1-2bf16a82b0bb1672984199901-Must_Have_styles_by_Vero_Moda-_ONLY_.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/39f9816d-53c2-47ea-a1ab-e7625cc1777c1672984199611-International_Styles_from_MANGO-_Trendyol_-_more_-Min50_off.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/12/89b87fbe-0df4-4022-9a0f-dafbff1001161673518438627-image_jpeg_2043501033--1-.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/bcf09ab8-63e7-4021-98fe-1a97a52c0e881672984199201-Best_of_Winterwear_Collection_for_Women_-_50-80_off_from_MANGO-_Vero_Moda_-_more.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/62b983e8-800d-4665-bbf7-e2af105a149b1672984200238-Stylish_Western_Wear_Collection_from_Tommy_-_CK.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/d8e2b735-9b87-4c81-80a4-2a6b795d73791672984200418-Trendy_Collection_from_Flying_Machine_-_USPA.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/12/dc239c28-598d-46fd-83c9-55c5b60a50701673519789870-image_jpeg2109498030.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/ad84dd3c-3e0d-43b7-b150-c04ba34bf15f1672984200592-Winterwear_collection_by_Madame_-_Monte_Carlo_-_More.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/12/4e631ff3-f2f5-4863-8644-61bc7a8831911673519813796-image_jpeg_205079781.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    </div>
+    <!-- OMG DEAL SECTION-02 -->
+    <div class="omg-deal">
+    <img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/12/e78ea5f5-8bcc-43e2-afce-529b95a166081673517538108-Grand-Brands.jpg" onclick=window.open("shoping.html","_self") alt="">
+    </div>
+    <!-- CARDS SECTION-02 -->
+    <div class="cards-10">
+    <div> <img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/5/c729d245-ddfd-4a87-8f78-e301a4f55a481672925100870-Louis_Philippe_1.jpg"  onclick=window.open("shoping.html","_self") alt="1"> </div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/5/61659bc8-ba41-4613-90ab-d565caef8a841672925101203-U.S._Polo_Assn..jpg" onclick=window.open("shoping.html","_self") alt="2"></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/5/e9663040-1f2b-46fa-bea8-eb6cebcbfec61672925100804-Jack_-_Jones.jpg" onclick=window.open("shoping.html","_self") alt="3"></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/5/13105046-915d-4d79-8629-f97cfc93ed3c1672925100832-Levis.jpg" onclick=window.open("shoping.html","_self") alt="4"></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/5/aace67e4-db94-4eb2-af19-869bf03a766c1672925100635-CK_Jeans.jpg" onclick=window.open("shoping.html","_self") alt="5"></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/5/88224848-384e-41a6-b0fd-4b4441c1d6ba1672925101152-Tommy_Hilfiger_1.jpg" onclick=window.open("shoping.html","_self") alt="6"></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/5/46dbeed1-d93a-4fad-b8a1-d5ad9da31b7d1672925101099-Skechers.jpg" onclick=window.open("shoping.html","_self") alt="7"></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/5/31958000-39b6-42c9-a427-4019e358c4ab1672925100645-Crocs.jpg" onclick=window.open("shoping.html","_self") alt="8"></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/5/97bd2aa7-1ab6-4611-8d10-64513eca45f21672925101285-USPA_Footwear.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/5/d584a0d0-6abd-441c-9ac6-581e36f2360a1672925100889-Mango_Man.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/5/8a9ca76a-6e00-47ff-bac1-38cea59da1091672925101348-Vero_Moda.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/5/49f5d524-cd55-4149-9102-cc8c9c977d441672925100980-ONLY.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/5/9763550c-0f25-4230-b1e9-8437d359e9131672925100699-Forever21.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/5/60410e7d-3931-4784-826c-869f5448a2771672925100541-Biba.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/5/006fb925-cfa7-4dd9-b977-3cdc16f5b0fe1672925101358-W.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/5/b8ef1aad-21f2-4ed2-872d-102e9b766da91672925100746-H-M.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/5/85ff34ea-b9bc-4972-86f7-9dd40108a2be1672925100994-Pantaloons.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/5/0c8e4fdf-0621-400e-9763-c6a17470a4a31672925100510-Aurelia.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/5/fe3be0d9-db9a-4ff5-9cb1-04b815c8b2661672925100842-Levis_1.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_98,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/5/acff550c-76e3-4b06-8018-704d918279991672925101271-Urbanic.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    </div>
+    <!-- OMG DEAL SECTION-02 -->
+    <div class="omg-deal">
+    <img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/12/1c508dcd-ee9f-4485-81a5-71d97bf512e31673517538088-Brands-To-Bag.jpg" onclick=window.open("shoping.html","_self") alt="">
+    </div>
+    <!-- CARDS SECTION-03 -->
+    <div class="cards-9">
+    <div> <img src="https://assets.myntassets.com/f_webp,w_108,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/509ea804-3830-48cb-8906-e20d52e5cafb1672983242648-Kurtas.jpg"  onclick=window.open("shoping.html","_self") alt=""> </div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_108,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/cfc68fe6-ef6f-4140-b2ea-15e742613aa61672983242628-Kurta-Sets.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_108,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/8cfbf46e-0daa-40bf-80d5-4feb2b30f5921672983242744-Sarees.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_108,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/6625532a-ceeb-48f0-8a9d-536590eee35c1672983242077-Dresses.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_108,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/1500f088-48f9-46f7-a2e2-fcb6306c2d8c1672983242992-Tops-_-Tees.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_108,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/08fbb3a1-3068-4cd8-9eba-8113c3e000721672983241947-Activewear.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_108,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/bbc7cf6f-4bf8-4dd8-858d-826f76c450a81672983242155-Flats.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_108,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/b8a59a2d-fc73-4ce3-8a31-07188dce4bbc1672983242900-Sweatshirts.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_108,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/cb896c8f-cc9d-4db7-85cd-272014a82ed51672983242408-Jackets_.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_108,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/905f956b-8f44-4cf5-bc3f-8a1176f0af641672983242447-Jeans..jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_108,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/71b5b436-ad16-4428-94e5-54678636ec051672983242175-Flip-Flops.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_108,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/e6ef9b71-7962-4d9b-b52e-bd78a49cc6a41672983242041-Casual-Shoes.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_108,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/af7cdf39-7ffa-407f-afd3-38f7546fda271672983242842-Sports-Shoes.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_108,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/5190651d-b648-4420-95f8-f2ee6883dd281672983243076-Trousers_.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_108,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/ae9788ec-c09f-466e-9a60-9b4985c9b6151672983242923-Sweatshirts_.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_108,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/a2cbd319-4a07-4ed2-9d64-a3e17331fe0b1672983242387-Jackets.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_108,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/0d8bc850-4264-441c-a7ee-dd6e3615ebe71672983242881-Sweaters.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+    <div><img src="https://assets.myntassets.com/f_webp,w_108,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/ef24f2b2-9fb5-4c08-9786-6350742fd0d31672984254612-Shirts.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+      </div>
+    <!-- OMG DEAL SECTION-03 -->
+    <div class="omg-deal">
+        <img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/11/2eb7efa2-1743-43b4-94c0-8b634d1be9af1673439896772-Budget-Buys--3-.jpg" onclick=window.open("shoping.html","_self") alt="">
+      </div>
+        <!-- CARDS SECTION-04 -->
+      <div class="grid-8">
+        <div> <img src="https://assets.myntassets.com/f_webp,w_122,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/4bb149a9-8496-4e5c-b91a-20545debd71a1672990786584-T-Shirts.jpg"onclick=window.open("shoping.html","_self")  alt="1"></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_122,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/76fb0dc3-3006-4f1c-821b-843f147520e11672990786524-Shirts.jpg" onclick=window.open("shoping.html","_self") alt="2"></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_122,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/f1ec1bf5-c2c1-4bd0-bbe2-66defbdd9ef01672990786502-Jeans.jpg" onclick=window.open("shoping.html","_self") alt="3"></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_122,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/c6476c3b-e53e-4f32-ad96-cb5de58b46361672990786547-Sports-Shoes.jpg" onclick=window.open("shoping.html","_self") alt="4"></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_122,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/d4f4d461-99d5-450a-96f7-c8b3b863448e1672990786437-Casual-Shoes.jpg" onclick=window.open("shoping.html","_self") alt="5"></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_122,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/b414ce0f-0e89-4791-b506-ede21e1e96521672990786566-Sweatshirts.jpg" onclick=window.open("shoping.html","_self") alt="6"></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_122,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/88ba4f19-0897-4a98-854d-7d448189995e1672990786481-Jackets.jpg" onclick=window.open("shoping.html","_self") alt="7"></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_122,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/ae6d390f-f839-4ee7-8641-fc72557dab801672990786459-Flip-Flops.jpg" onclick=window.open("shoping.html","_self") alt="8"></div>           
+        <div><img src="https://assets.myntassets.com/f_webp,w_122,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/77e96470-ca78-4cab-b8e5-14ed284d2b741672990939116-Kurta-Sets.jpg" onclick=window.open("shoping.html","_self") alt="9"></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_122,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/92656ad9-3357-426c-9bd3-e57ec62106b01672990939015-Dresses.jpg" onclick=window.open("shoping.html","_self") alt="10"></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_122,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/e3feddbb-dea8-41dd-8171-f32ead9453671672990939156-Sweaters-_-Sweatshirts.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_122,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/c427ea48-b8c4-4c7b-92f9-352adb2487e91672990939177-Tops-_-Tees.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_122,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/7dae801f-3562-467e-92dd-ef40c472eac21672990939137-Kurtas.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_122,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/1ff577a6-b8f8-480b-9cec-f317676dc6e01672990939077-Jeans.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_122,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/c31bda53-0b98-46c5-9ebb-51c5874721f41672990939058-Jackets.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_122,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/6/0f155dec-c813-4b69-a0f9-e894b15dc8821672990939097-Kids-Wear.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+
+      </div>
+        <!-- OMG DEAL SECTION-04 -->
+    <div class="omg-deal">
+        <img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/11/ba62da25-d69a-441f-a639-4bd08534f3451673416953973-Shop-By-Category--2-.jpg" onclick=window.open("shoping.html","_self") alt="">
+    </div>
+      <!-- CARDS SECTION-04 -->
+      <div class="grid-6">
+        <div><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/8/e988c7f2-ba2c-4689-9b16-4562fb2334b81673167109254-HP_Shop-By-Category_02.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/8/1a02b270-6967-4d29-9f45-15f72aebc66e1673167109264-HP_Shop-By-Category_03.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/8/0b2f02e5-d5b0-4c5a-90b0-8b277e5d4e9f1673167109275-HP_Shop-By-Category_04.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/8/b1866f27-9de8-462f-a93a-5202fbf38d221673167109285-HP_Shop-By-Category_05.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/8/8e0450b5-c63f-4e37-a773-8a065539f2c41673167109297-HP_Shop-By-Category_06.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/8/c6f948a1-a336-4dbd-9df5-802fa7bee0611673167109308-HP_Shop-By-Category_07.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/8/4c0055e3-e2bb-4cf7-9603-b44267bf0a851673167109320-HP_Shop-By-Category_08.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/8/74a4dd77-ed29-4f14-93f3-f7ff1cf22cb81673167109332-HP_Shop-By-Category_09.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/8/3dbe2f50-5ea3-41fa-b835-935e8e88dbed1673167109341-HP_Shop-By-Category_10.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/8/d19c0fce-61f1-4987-895a-8df5ece39e891673167109353-HP_Shop-By-Category_11.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/8/46bab40b-6e48-4350-8558-a0f24f597f521673167109363-HP_Shop-By-Category_12.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/8/605a0640-1b48-48c0-a569-d70058ff2e711673167109375-HP_Shop-By-Category_13.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/8/7bac00be-78c0-4f51-b4cc-2b785f9530981673167109386-HP_Shop-By-Category_14.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/8/edd7a1ed-bc37-4a33-b6ed-77354119d37f1673167109397-HP_Shop-By-Category_15.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/8/4aebae7d-cac9-4c31-9eaa-dc7bf50210751673167109406-HP_Shop-By-Category_16.jpg " onclick=window.open("shoping.html","_self") alt=""></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/8/b3c54352-88c3-43ef-9d24-77f59816238a1673167109417-HP_Shop-By-Category_17.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/8/6740e454-6e54-41f9-a971-86a1b1a166871673167109429-HP_Shop-By-Category_18.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/8/aa824a00-9f19-45d6-b114-6250b0d830771673167109439-HP_Shop-By-Category_19.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/8/71111ef0-5ab6-498c-b6cd-f2482e69f82a1673167109451-HP_Shop-By-Category_20.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/8/ee6014e4-97c5-4093-91b1-8c7623439dc71673167109464-HP_Shop-By-Category_21.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/8/5a565264-578c-4e20-bf14-5368569e2f391673167109474-HP_Shop-By-Category_22.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/8/9773c8f9-bd7f-49a9-8107-92a03dca81d11673167109484-HP_Shop-By-Category_23.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/8/d9ef7ba6-904b-460e-803b-42ed9014f3381673167109494-HP_Shop-By-Category_24.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/8/748c9cca-e4a4-478a-b3ae-79f5e4e943de1673167109504-HP_Shop-By-Category_25.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/8/798ccf46-4dfb-43b6-93cc-4337c5af39d61673167109513-HP_Shop-By-Category_26.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/8/a3074073-3525-46b7-8ef9-efcae8aab9801673167109522-HP_Shop-By-Category_27.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/8/0f49791b-49fb-45df-9e34-dd3567bd21e61673167109531-HP_Shop-By-Category_28.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/8/46f067c3-a4aa-44a9-9ed0-2587b012b37c1673167109540-HP_Shop-By-Category_29.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/8/6a4aea65-4774-4ae4-b775-3db3208631ce1673167109548-HP_Shop-By-Category_30.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/8/b0fde03d-e392-46dc-9a54-d5511853e9441673167109556-HP_Shop-By-Category_31.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        
+        
+      </div>
+      <div class="grid-2">
+        <div><img src="https://assets.myntassets.com/f_webp,w_490,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/8/78e0472c-9103-4958-a064-0756429c20211673167109565-HP_Shop-By-Category_32.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+        <div><img src="https://assets.myntassets.com/f_webp,w_490,c_limit,fl_progressive,dpr_2.0/assets/images/2023/1/8/c83cf759-2c0b-40e7-acc8-0d4c6a48f89b1673167109573-HP_Shop-By-Category_33.jpg" onclick=window.open("shoping.html","_self") alt=""></div>
+      </div>
+    <!-- </section> -->
+
+    <!-- footer starts -->
+    <footer>
+      <div class=" footerdiv flex">
+        <div>
+          <p><a href="#"></a><strong>ONLINE SHOPPING</strong></p>
+          <p><a href="#"></a>Men</p>
+          <p><a href="#"></a>Women</p>
+          <p><a href="#"></a>Kids</p>
+          <p><a href="#"></a>Home & Living</p>
+          <p><a href="#"></a>Beauty</p>
+          <p><a href="#"></a>Gift Cards</p>
+          <p><a href="#"></a>Myntra Insider</p>
+          <p><a href="#"><strong>USEFUL LINKS</strong></a></p>
+          <p><a href="#">Blog</a></p>
+          <p><a href="#">Careers</a></p>
+          <p><a href="#">Site Map</a></p>
+          <p><a href="#">Corporate Information</a></p>
+          <p><a href="#">Whitehat</a></p>
+        </div>
+        <div>
+          <p><a href="#"><strong>CUSTOMER POLICIES</strong></a></p>
+          <p><a href="#">Contact Us</a></p>
+          <p><a href="#">FAQ</a></p>
+          <p><a href="#">T&C</a></p>
+          <p><a href="#">Terms Of Use</a></p>
+          <p><a href="#">Track Orders</a></p>
+          <p><a href="#">Shipping</a></p>
+          <p><a href="#">Cancellation</a></p>
+          <p><a href="#">Returns</a></p>
+          <p><a href="#">Privacy policy</a></p>
+          <p><a href="#">Grievance Officer</a></p>
+          </div>
+          <div>
+            <p><strong>EXPERIENCE MYNTRA APP ON MOBILE</strong></p>
+            <div class="imagediv flex">
+            <img src="https://constant.myntassets.com/web/assets/img/80cc455a-92d2-4b5c-a038-7da0d92af33f1539674178924-google_play.png" alt="Anddroid-img">
+            <img src="https://constant.myntassets.com/web/assets/img/bc5e11ad-0250-420a-ac71-115a57ca35d51539674178941-apple_store.png" alt="Apple-img">
+
+            </div>
+            <p><strong>KEEP IN TOUCH</strong></p>
+            <div class="socialmedia mx-2 flex">  
+          <img src="https://constant.myntassets.com/web/assets/img/d2bec182-bef5-4fab-ade0-034d21ec82e31574604275433-fb.png" alt="facebook">    
+          <img src="https://constant.myntassets.com/web/assets/img/f10bc513-c5a4-490c-9a9c-eb7a3cc8252b1574604275383-twitter.png" alt="Twitter">
+          <img src="https://constant.myntassets.com/web/assets/img/a7e3c86e-566a-44a6-a733-179389dd87111574604275355-yt.png" alt="Youtube">
+          <img src="https://constant.myntassets.com/web/assets/img/b4fcca19-5fc1-4199-93ca-4cae3210ef7f1574604275408-insta.png" alt="INSTAGRAM">
+          </div>
+          
+          </div>
+          <div class="30day-img">
+            <img src="./img/Screenshot_20230119_190652.png" alt="">
+          </div>
+          
+          
+      </div>
+      <div class="footerdiv">
+        <hr>
+        <span><strong style="color: black;">POPULAR SEARCHES</strong></span>
+        <p class="linewidth">Makeup | Dresses For Girls | T-Shirts | Sandals | Headphones | Babydolls | Blazers For Men | Handbags | Ladies Watches | Bags | Sport Shoes | Reebok Shoes | Puma Shoes | Boxers | Wallets | Tops | Earrings | Fastrack Watches | Kurtis | Nike | Smart Watches | Titan Watches | Designer Blouse | Gowns | Rings | Cricket Shoes | Forever 21 | Eye Makeup | Photo Frames | Punjabi Suits | Bikini | Myntra Fashion Show | Lipstick | Saree | Watches | Dresses | Lehenga | Nike Shoes | Goggles | Bras | Suit | Chinos | Shoes | Adidas Shoes | Woodland Shoes | Jewellery | Designers Sarees|</p>
+
+      </div>
+      <div class="copyright flex space-between  ">
+        <div> <h5>In case of any concern,<a href="#"> Contact Us</a></h5></div>
+        <div>
+        <h5><span>&copy;</span> 2023 www.myntra.com. All rights reserved.</h5>
+        </div>
+      </div>
+      <div class="footerdiv">
+        <hr>
+      </div>
+      <div class="address">
+        <h3 style="color: black;">Registered Office Address</h3>
+        <div class="flex space-between ">
+          <div>
+            <p>Buildings Alyssa, <br>
+              Begonia and Clover situated in Embassy Tech Village,<br>
+              Outer Ring Road,<br>
+              Devarabeesanahalli Village,<br>
+              Varthur Hobli,<br>
+              Bengaluru - 560103, Indiabr <br></p>
+            
+          </div>
+          <div>
+            <p>CIN: U72300KA2007PTC041799 <br>
+
+              Telephone: &nbsp;<a href="">+91-80-61561999</a></p>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

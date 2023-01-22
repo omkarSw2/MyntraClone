@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="utilities.css">
+    <title>Document</title>
+    <style>
+        .main{
+            margin-top: 5%;
+           
+          
+        }
+        
+        .main>form>div{
+            margin: auto;
+           
+            width:50%;
+        }
+        #validationCustom05{
+            margin:0px;
+            margin-top: 12px;
+            background-color:rgb(211, 66, 66);
+            color :white;
+            font-weight: 600;
+
+            /* border: 2px solid red; */
+
+        }
+    </style>
+</head>
+<body>
+   <div class="main">
+    
+    <!-- <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label"><strong>Address *</strong> </label> <br>
+        <label for="exampleFormControlInput1" class="form-label">First name </label>
+        <input type="name" class="form-control" id="exampleFormControlInput1" placeholder=" first name"> 
+      </div> 
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Last name </label>
+        <input type="name" class="form-control" id="exampleFormControlInput1" placeholder=" last name"> 
+      </div> 
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+      </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Phone</label>
+        <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="phone number">
+      </div>
+      <div class="mb-3">
+        <button type="button" class="btn btn-danger">Conform</button>
+      </div> -->
+      <form  id="form" class="row g-3 needs-validation" novalidate>
+        <div class="col-md-4">
+          <label for="validationCustom01" class="form-label">First name</label>
+          <input type="text" class="form-control" id="validationCustom01" placeholder=" first name" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustom02" class="form-label">Last name</label>
+          <input type="text" class="form-control" id="validationCustom02"  placeholder=" laset name" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustomUsername" class="form-label">Username</label>
+          <div class="input-group has-validation">
+            <span class="input-group-text" id="inputGroupPrepend">@</span>
+            <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+            <div class="invalid-feedback">
+              Please choose a username.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustom03" class="form-label">City</label>
+          <input type="text" class="form-control" id="validationCustom03" required>
+          <div class="invalid-feedback">
+            Please provide a valid city.
+          </div>
+        </div>
+        <div class="col-md-6">
+            <label for="validationCustom03" class="form-label">Pin Code</label>
+            <input type="number" class="form-control" id="validationCustom07" required>
+            <div class="invalid-feedback">
+              Please provide a valid city.
+            </div>
+          </div>
+        <div class="col-md-3">
+          <label for="validationCustom04" class="form-label">State</label>
+          <select class="form-select" id="validationCustom04" required>
+            <option selected disabled value="">Choose...</option>
+            <option>Andhra Pradesh</option>
+            <option>Arunachal Pradesh</option>
+            <option>Assam</option>
+            <option>Bihar</option>
+            <option>Chhattisgarh</option>
+            <option>Goa</option>
+            <option>Gujarat</option>
+            <option>Haryana</option>
+            <option>Himachal Pradesh</option>
+            <option>Jharkhand</option>
+            <option>Karnataka</option>
+            <option>Kerala</option>
+            <option>Madhya Pradesh</option>
+            <option>Maharashtra</option>
+            <option>Manipur</option>
+            <option>Meghalaya</option>
+            <option>Mizoram</option>
+            <option>Nagaland</option>
+            <option>Odisha</option>
+            <option>Punjab</option>
+            <option>Rajasthan</option>
+            <option>Sikkim</option>
+            <option>Tamil Nadu</option>
+            <option>Telangana</option>
+            <option>Tripura</option>
+            <option>Uttar Pradesh</option>
+            <option>Uttarakhand</option>
+            <option>West Bengal</option>
+            
+           
+          </select>
+          <div class="invalid-feedback">
+            Please select a valid state.
+          </div>
+        </div>
+       
+        <!-- <div class="col-md-3">
+          <label for="validationCustom05" class="form-label">Zip</label>
+          <input type="text" class="form-control" id="validationCustom05" required>
+          <div class="invalid-feedback">
+            Please provide a valid zip.
+          </div>
+        </div> -->
+        <!-- <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+            <label class="form-check-label" for="invalidCheck">
+              Agree to terms and conditions
+            </label>
+            <div class="invalid-feedback">
+              You must agree before submitting.
+            </div>
+          </div>
+        </div> -->
+
+        <div class="col-12 ">
+            <input type="submit" class="form-control" id="validationCustom05" >
+        </div>
+      </form>
+    
+   </div>
+    
+</body>
+<script>
+    let form=document.getElementById("form")
+    let formdata=JSON.parse(localStorage.getItem("formdata"))||[];
+   form.addEventListener("submit",()=>{
+    event.preventDefault()
+    let name=document.getElementById("validationCustom01").value;
+    let lastname=document.getElementById("validationCustom02").value;
+    let email=document.getElementById("validationCustomUsername").value;
+    let city=document.getElementById("validationCustom03").value;
+    let pincode=document.getElementById("validationCustom07").value;
+    let state=document.getElementById("validationCustom04").value;
+
+    console.log(name,lastname,email,city,state);
+    let obj={
+        name:name,
+        email:email,
+        city:city,
+        pincode:pincode,
+        state:state,
+    
+    }
+    formdata.push(obj);
+    localStorage.setItem("formdata", JSON.stringify(formdata));
+    window.open("thankyou.html","_self");
+   });
+</script>
+</html>

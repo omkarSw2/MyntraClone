@@ -1,0 +1,51 @@
+header{
+	box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.login-form{
+	width:30%;
+	margin: auto;
+	margin-top:10%;
+	
+
+
+
+border: 1px solid black;
+
+}
+.login-form>div a{
+	text-decoration: none;
+}
+.login-form>div{
+	display: flex;
+	justify-content: center;
+	padding: 30px;
+}
+.login-form>div>button{
+	color: blue;
+	margin: 20xp;
+	padding: 5px;
+	border:1px solid gray;
+	background-color: lightcoral;
+	
+}
+.login-form>div>button:hover{
+	background-color: rgb(172, 7, 35);
+
+}
+.login-form>div>button>a:hover{
+	color:white;
+}
+.login-form-input{
+	text-align: center;
+
+}
+.login-form-input>input{
+	margin: 20px 0px; 
+	padding:5px 5px;
+	border-radius: 5px;
+	border:1px solid black;
+
+}
+
+	

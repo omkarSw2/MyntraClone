@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:  rgb(255, 255, 255);
+            display: flex;
+            justify-content: center;
+            /* margin: auto; */
+        }
+        body>img{
+            width: 40%;
+            height: 50%;
+            border-radius: 50%;
+       
+        
+        }
+        body>div{
+            /* border: 1px solid black; */
+            margin-top :80px;
+
+          
+        
+        }
+        body>div>a{
+            display: flex ;
+           
+            align-items: center;
+            font-size: 50px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="thank-you">
+      <a href="">thank You <br> For Shoping </a>
+    </div>
+    
+</body>
+<script>
+      let redirect_Page = () => {
+        let tID = setTimeout(function () {
+            window.location.href = "index.html","_self";
+            window.clearTimeout(tID);		// clear time out.
+        }, 5000);
+    }
+    redirect_Page()
+</script>
+</html>
